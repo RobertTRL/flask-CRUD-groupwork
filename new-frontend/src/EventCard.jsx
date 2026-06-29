@@ -13,6 +13,7 @@ export default function EventCard({event}) {
         <>
         <div>
             <p>{event.title}</p>
+            <button type="button">Remove</button>
         </div>
 
          {/* edit form */}
@@ -23,6 +24,8 @@ export default function EventCard({event}) {
             value={editForm.title}
             onChange={(e) => handleEditForm(e)}
             />
+            <br /><br />
+            <button type="submit">Edit</button>
         </form>
         </>
     )

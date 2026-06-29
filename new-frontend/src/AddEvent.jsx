@@ -20,6 +20,7 @@ export default function AddEvent({events, setEvents}) {
             onChange={(e) => handleOnChange(e)}
             placeholder='Add event' 
             />
+            <button type="submit">Add</button>
         </form>
         </>
     )
