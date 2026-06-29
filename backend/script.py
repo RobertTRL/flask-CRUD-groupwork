@@ -17,11 +17,11 @@ events = [
 ]
 
 # GET operations
-@app.route("/events", method=["GET"])
+@app.route("/events", methods=["GET"])
 def get_events():
     return jsonify([e.to_dict() for e in events])
 
-@app.route("events/<int:event_id>", method=["GET"])
+@app.route("/events/<int:event_id>", methods=["GET"])
 def get_event_by_id(event_id):
     specific_event = next((e for e in events if e.id == event_id), None)
 
@@ -31,7 +31,7 @@ def get_event_by_id(event_id):
     return jsonify(specific_event.to_dict())
 
 # POST operations
-@app.route("/events", method=["POST"])
+@app.route("/events", methods=["POST"])
 def create_event():
     data = request.get_json()
     new_id = max([e.id for e in events]) + 1 if events else 1
