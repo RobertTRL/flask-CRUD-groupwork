@@ -1,0 +1,45 @@
+.events-list {
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 20px 10px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.event-card {
+    border: 1px solid black;
+    border-radius: 10px;
+    margin: 20px 0;
+    padding: 10px 0;
+}
+
+.title-div {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.title-div button { height: 20px; }
+
+.event-card form {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.search-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.search-bar {
+    width: clamp(150px, 50vw, 1000px);
+    height: 25px;
+    border: 1px solid black;
+    border-radius: 7px;
+    padding: 0 6px;
+}

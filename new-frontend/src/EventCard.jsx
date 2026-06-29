@@ -12,13 +12,12 @@ export default function EventCard({event}) {
         setEditForm({...editForm, [e.target.name] : e.target.value})
     }
     return(
-        <>
-        <div>
+        <div className="event-card">
+        <div className="title-div">
             <p>{event.title}</p>
             <button type="button">Remove</button>
         </div>
 
-         {/* edit form */}
         <form>
             <input 
             type="text" 
@@ -26,9 +25,8 @@ export default function EventCard({event}) {
             value={editForm.title}
             onChange={(e) => handleEditForm(e)}
             />
-            <br /><br />
             <button type="submit">Edit</button>
         </form>
-        </>
+        </div>
     )
 }

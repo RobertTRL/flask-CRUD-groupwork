@@ -1,12 +1,12 @@
 import EventCard from "./EventCard"
 
 export default function EventList({events}) {
-    
+
     return (
         <>
-        <div>
+        <div className="events-list">
             {events.map((event) => (
-                <EventCard key= {event.id} event={event}/>
+                <EventCard key={event.id} event={event}/>
             ))}
         </div>
         </>
