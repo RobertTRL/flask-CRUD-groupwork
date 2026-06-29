@@ -5,7 +5,7 @@ import EventList from './EventList'
 import AddEvent from './AddEvent'
 
 function App() {
-    const [events, setEvents] = useState('')
+    const [events, setEvents] = useState([])
     const [search, setSearch] = useState('')
   // TO BE CONVERTED TO REACT CODE
   // const resultsDiv = document.querySelector("#results")
@@ -24,7 +24,10 @@ function App() {
     useEffect(() => {
       fetch("http://127.0.0.1:5000/events")
           .then(res => res.json())
-          .then(data => setEvents(data))
+          .then(data => {
+            setEvents(data)
+            console.log(data)
+        })
           .catch(err => console.log(err))
       }, [])
 
@@ -72,9 +75,7 @@ function App() {
 
   // // })
 
-  const filteredSearch = events.filter((event) => {
-    return event.title.toLowercase().include(search.toLowercase())
-  })
+  const filteredSearch = events.filter((event) => event.title.toLowerCase().includes(search.toLowerCase()))
 
   return (
     <>
