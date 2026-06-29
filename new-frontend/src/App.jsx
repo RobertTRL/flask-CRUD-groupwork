@@ -36,8 +36,8 @@ function App() {
 
   return (
     <>
-    <Search search = {search} setSearch = {setSearch}/>
-    <EventList events = {events} setEvents = {setEvents}/>
+    <Search search = {search} setSearch={setSearch}/>
+    <EventList events={events} setEvents={setEvents} filteredSearch={filteredSearch}/>
     <AddEvent events={events} setEvents={setEvents}/>
     </>
   )
