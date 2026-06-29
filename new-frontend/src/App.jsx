@@ -4,9 +4,39 @@ import './App.css'
 function App() {
 
   return (
-    <>
-      {/* WHERE INDEX.HTML CODE AND SCRIPT.JS CODE WILL BE PLACE */}
-    </>
+    <main>
+      <input type="text" placeholder="Search for an event" id="search-bar"/>
+      <form>
+          <h2>Edit event</h2>
+          <select name="edit-events" id="edit-dropdown" class="dropdown">
+
+          </select>
+          <button id="edit-button">Edit</button>
+      </form>
+
+      <form>
+          <h2>Create event</h2>
+          <label for="">
+              Enter event title
+              <input type="text"/>
+          </label>
+          <button id="create-button">Create</button>
+      </form>
+
+      <form>
+          <h2>Delete event</h2>
+          <select name="edit-events" id="delete-dropdown" class="dropdown">
+
+          </select>
+          <button id="delete-button">Delete</button>
+      </form>
+
+      <div id="results">
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia odit impedit dicta atque, autem magnam vel. Autem, quae incidunt assumenda quisquam cumque illo perferendis tempora, voluptate odio, alias a atque.</p>
+      </div>
+      
+    </main>
+
   )
 }
 
