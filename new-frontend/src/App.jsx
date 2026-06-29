@@ -7,20 +7,7 @@ import AddEvent from './AddEvent'
 function App() {
     const [events, setEvents] = useState([])
     const [search, setSearch] = useState('')
-  // TO BE CONVERTED TO REACT CODE
-  // const resultsDiv = document.querySelector("#results")
-  // const searchBar = document.querySelector("#search-bar")
-  // const editDropdown = document.querySelector("#edit-dropdown")
-  // const deleteDropdown = document.querySelector("#delete-dropdown")
-  // const editButton = document.querySelector("#edit-button")
-  // const deleteButton = document.querySelector("#delete-button")
-  // let deleteValue = deleteDropdown.firstElementChild
-  // let editValue = editDropdown.firstElementChild
 
-  // document.addEventListener("DOMContentLoaded", () => {
-  //     resultsDiv.innerHTML = ''
-  //     editDropdown.innerHTML = ''
-  //     deleteDropdown.innerHTML = ''
     useEffect(() => {
       fetch("http://127.0.0.1:5000/events")
           .then(res => res.json())
@@ -30,35 +17,6 @@ function App() {
         })
           .catch(err => console.log(err))
       }, [])
-
-
-
-  //     fetch("http://127.0.0.1:5000/events")
-  //         .then(res => res.json())
-  //         .then(data => {
-  //             data.map((item) => {
-  //                 const eventDiv = document.createElement("div")
-  //                 eventDiv.className = 'eventdiv'
-  //                 const p = document.createElement("p")
-  //                 const id = document.createElement("h3")
-  //                 p.textContent = item.title
-  //                 id.textContent = item.id
-  //                 eventDiv.id = item.id
-  //                 eventDiv.append(p, id)
-  //                 resultsDiv.append(eventDiv)
-  //                 const option = document.createElement("option")
-  //                 option.value = item.id
-  //                 option.textContent = item.title
-  //                 option.addEventListener("click", () => {
-  //                     console.log("Item has been clicked")
-  //                     deleteValue = option
-  //                     console.log(deleteValue)
-  //                 })
-  //                 editDropdown.append(option)
-  //                 deleteDropdown.append(option)
-  //             })
-  //         })
-  // })
 
   // deleteDropdown.addEventListener("onChange", (e) => {
   //     deleteValue = deleteDropdown.value
