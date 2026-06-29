@@ -1,6 +1,8 @@
 from flask import Flask, request, jsonify, make_response
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 
 class Event:
     def __init__(self, id, title):
