@@ -1,4 +1,4 @@
-import {useState} from "react"
+import { useState } from "react"
 
 export default function AddEvent({events, setEvents}) {
      
@@ -11,8 +11,9 @@ export default function AddEvent({events, setEvents}) {
         setFormData({...formData, [e.target.name]:e.target.value})
     }
     return(
-        <>
-        <form action="">
+        <div className="add-events">
+            <h2>Add Event</h2>
+        <form>
             <input 
             name='name'
             type="text"
@@ -22,7 +23,7 @@ export default function AddEvent({events, setEvents}) {
             />
             <button type="submit">Add</button>
         </form>
-        </>
+        </div>
     )
     
 }
