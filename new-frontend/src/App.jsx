@@ -1,10 +1,12 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
 import Search from './Search'
 import EventList from './EventList'
 import AddEvent from './AddEvent'
 
 function App() {
+    const [events, setEvents] = useState('')
+    const [search, setSearch] = useState('')
   // TO BE CONVERTED TO REACT CODE
   // const resultsDiv = document.querySelector("#results")
   // const searchBar = document.querySelector("#search-bar")
@@ -19,6 +21,14 @@ function App() {
   //     resultsDiv.innerHTML = ''
   //     editDropdown.innerHTML = ''
   //     deleteDropdown.innerHTML = ''
+    useEffect(() => {
+      fetch("http://127.0.0.1:5000/events")
+          .then(res => res.json())
+          .then(data => setEvents(data))
+          .catch(err => console.log(err))
+      }, [])
+
+
 
   //     fetch("http://127.0.0.1:5000/events")
   //         .then(res => res.json())
@@ -61,8 +71,6 @@ function App() {
   // // searchBar.addEventListener("onChange", () => {
 
   // // })
-  const [events, setEvents] = useState([])
-  const [search, setSearch] = useState('')
 
   const filteredSearch = events.filter((event) => {
     return event.title.toLowercase().include(search.toLowercase())
