@@ -13,7 +13,6 @@ function App() {
           .then(res => res.json())
           .then(data => {
             setEvents(data)
-            console.log(data)
         })
           .catch(err => console.log(err))
       }, [])
