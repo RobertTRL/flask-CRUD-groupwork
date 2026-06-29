@@ -10,12 +10,31 @@ export default function AddEvent({events, setEvents}) {
     function handleOnChange(e) {
         setFormData({...formData, [e.target.name]:e.target.value})
     }
+    function handleOnSubmit(e) {
+        if (!formData.title) {
+            alert("Please enter a title")
+            return
+        }
+        e.preventDefault()
+        fetch("http://localhost:5000/events", {
+            method: 'POST',
+            headers: {
+                'Content-Type' : 'application/json' 
+            },
+            body: JSON.stringify(formData)
+        })
+        .then(res => res.json())
+        .then(data => {
+            setEvents([...events, data])
+            setFormData({...formData, title: ""})
+        })
+    }
     return(
         <div className="add-events">
             <h2>Add Event</h2>
-        <form>
+        <form onSubmit={(e) => handleOnSubmit(e)}>
             <input 
-            name='name'
+            name='title'
             type="text"
             value={formData.title}
             onChange={(e) => handleOnChange(e)}
