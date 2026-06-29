@@ -52,8 +52,8 @@ def update_event(event_id):
     event = next((e for e in events if e.id == event_id), None)
 
     if not event:
-        return ("Event not found", 404)
-    
+        return jsonify({"message": "Event not found"}), 404
+
     if "title" in data:
         event.title = data["title"]
     
@@ -65,10 +65,10 @@ def delete_event(event_id):
     global events
     event = next((e for e in events if e.id == event_id), None)
     if not event:
-        return ("Event not found", 404)
+        return jsonify({"message": "Event not found"}), 404
     else:
         events = [e for e in events if e.id != event_id]
-        return jsonify("Event deleted"), 204
+        return jsonify({"message": "Event deleted", "event": event.to_dict()}), 200
 
 if __name__ == "__main__":
     app.run(debug=True)
