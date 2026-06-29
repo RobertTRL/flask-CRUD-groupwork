@@ -15,7 +15,11 @@ class Event:
 
 events = [
     Event(1, "Tech Meetup"),
-    Event(2, "Python Workshop")
+    Event(2, "Python Workshop"),
+    Event(3, "Women in Tech"),
+    Event(4, "Hackathon"),
+    Event(5, "Alumni Meet and Grill"),
+    Event(6, "Tech Networking Event"),
 ]
 
 # GET operations
